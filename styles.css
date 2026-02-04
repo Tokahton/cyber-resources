@@ -1,0 +1,378 @@
+/* --- Dark hacker theme --- */
+:root {
+  --bg: #0a0e0f;
+  --bg-card: #0f1416;
+  --bg-tab: #131a1d;
+  --border: #1e2a2e;
+  --text: #b8c5c9;
+  --text-dim: #6b7c82;
+  --accent: #00ff88;
+  --accent-dim: #00cc6a;
+  --cyan: #00d4ff;
+  --glow: rgba(0, 255, 136, 0.15);
+  --font-mono: 'JetBrains Mono', 'Share Tech Mono', 'Consolas', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-mono);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle scanline overlay */
+.scanline {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header --- */
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.prompt {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px var(--glow);
+}
+
+.section-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.made-by {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.made-by a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.made-by a:hover {
+  color: var(--cyan);
+}
+
+.made-by a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- Tabs --- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  bottom: -1px;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab.active {
+  color: var(--accent);
+  background: var(--bg-tab);
+  border-color: var(--border);
+  border-bottom: 1px solid var(--bg-tab);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- Panels --- */
+.panel {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel[hidden] {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.panel-desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+/* --- Tools: cards --- */
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-left-color: var(--cyan);
+  box-shadow: 0 0 24px var(--glow);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* --- Tutorials: link list --- */
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-list li {
+  margin-bottom: 0.5rem;
+}
+
+.link-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.link-list a:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.link-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- Certificate: CTA card --- */
+.cta-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.cta-card:hover {
+  border-left-color: var(--cyan);
+  box-shadow: 0 0 32px var(--glow);
+  transform: translateX(4px);
+}
+
+.cta-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cta-url {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.cta-arrow {
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.cta-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- TryHackMe list --- */
+.thm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.thm-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.thm-list a {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.2s, color 0.2s;
+}
+
+.thm-list a:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+.thm-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  flex-shrink: 0;
+}
+
+.badge.free {
+  background: rgba(0, 255, 136, 0.15);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+}
+
+.badge.paid {
+  background: rgba(255, 100, 80, 0.15);
+  color: #ff6450;
+  border: 1px solid #cc5040;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .tabs {
+    gap: 0;
+  }
+
+  .tab {
+    flex: 1 1 50%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 1rem 1.25rem;
+  }
+
+  .cta-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .thm-list li {
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    margin-left: 1rem;
+  }
+}

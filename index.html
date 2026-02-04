@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources to Start Cybersecurity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanline"></div>
+  <div class="noise"></div>
+
+  <main class="container">
+    <header class="section-header">
+      <span class="prompt">root@kali:~#</span>
+      <h1>Resources to start cybersecurity</h1>
+      <p class="tagline">// curated tools, tutorials & labs</p>
+      <p class="made-by">Made By: <a href="https://github.com/Tokahton" target="_blank" rel="noopener noreferrer">https://github.com/Tokahton</a></p>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Resource categories">
+      <button type="button" class="tab active" role="tab" aria-selected="true" aria-controls="panel-tools" id="tab-tools">Tools</button>
+      <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-tutorials" id="tab-tutorials">Tutorials</button>
+      <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-cert" id="tab-cert">Certificate training</button>
+      <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="panel-thm" id="tab-thm">TryHackMe labs</button>
+    </nav>
+
+    <section id="panel-tools" class="panel active" role="tabpanel" aria-labelledby="tab-tools">
+      <p class="panel-desc">Essential tools for recon, exploitation, and analysis.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Nmap (Network Mapper)</h3>
+          <p>The go-to tool for network discovery and security auditing. It scans networks to identify active hosts, open ports, service versions, and operating systems.</p>
+        </article>
+        <article class="card">
+          <h3>Metasploit Framework</h3>
+          <p>A premier exploitation framework used to find, exploit, and validate vulnerabilities. It includes a massive database of prebuilt exploits and payloads, making it essential for penetration testing.</p>
+        </article>
+        <article class="card">
+          <h3>Burp Suite</h3>
+          <p>A comprehensive platform for web application security testing. It acts as an intercepting proxy, allowing users to analyze, modify, and replay web traffic to identify SQL injection, XSS, and other vulnerabilities.</p>
+        </article>
+        <article class="card">
+          <h3>Wireshark</h3>
+          <p>The world's foremost network protocol analyzer. It captures network traffic in real-time, allowing for deep inspection of hundreds of protocols to troubleshoot or analyze suspicious activity.</p>
+        </article>
+        <article class="card">
+          <h3>Aircrack-ng</h3>
+          <p>A complete suite of tools for assessing WiFi network security. It specializes in monitoring, attacking (de-authentication), testing, and cracking (WEP/WPA/WPA2-PSK) wireless networks.</p>
+        </article>
+        <article class="card">
+          <h3>Sqlmap</h3>
+          <p>An automated tool for detecting and exploiting SQL injection flaws in web applications. It streamlines database takeover, data extraction, and user privilege escalation.</p>
+        </article>
+        <article class="card">
+          <h3>Hydra (THC-Hydra)</h3>
+          <p>A very fast network logon cracker. It performs rapid dictionary attacks against more than 50 protocols, including SSH, Telnet, FTP, HTTP, and RDP.</p>
+        </article>
+        <article class="card">
+          <h3>Hashcat</h3>
+          <p>The world's fastest password recovery tool, leveraging GPU power to crack complex password hashes, making it faster than CPU-based tools.</p>
+        </article>
+        <article class="card">
+          <h3>Bettercap</h3>
+          <p>A powerful, flexible tool for network reconnaissance and man-in-the-middle (MitM) attacks. It is effective for sniffing, spoofing, and attacking both wired and wireless networks.</p>
+        </article>
+        <article class="card">
+          <h3>Social-Engineer Toolkit (SET)</h3>
+          <p>Used to simulate social engineering attacks like phishing.</p>
+        </article>
+        <article class="card">
+          <h3>Netcat (nc)</h3>
+          <p>The "Swiss army knife" of networking for reading/writing data across network connections.</p>
+        </article>
+        <article class="card">
+          <h3>John the Ripper</h3>
+          <p>A fast, versatile, offline password-cracking tool. It is widely used to identify weak passwords by testing various encryption formats, hashes, and dictionary attacks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="panel-tutorials" class="panel" role="tabpanel" aria-labelledby="tab-tutorials" hidden>
+      <p class="panel-desc">Getting started guides, docs, and video tutorials.</p>
+      <ul class="link-list">
+        <li><a href="https://www.youtube.com/watch?v=sAMnXte56yY" target="_blank" rel="noopener noreferrer">How to download Kali Linux in VirtualBox</a></li>
+        <li><a href="https://www.youtube.com/watch?v=FYYU9qZ0Pps" target="_blank" rel="noopener noreferrer">How to download Kali Linux and flash USB</a></li>
+        <li><a href="https://www.youtube.com/watch?v=Vos7DCTqvSM" target="_blank" rel="noopener noreferrer">To do after downloading Kali Linux</a></li>
+        <li><a href="https://nmap.org/book/toc.html" target="_blank" rel="noopener noreferrer">Nmap online book</a></li>
+        <li><a href="https://www.offsec.com/metasploit-unleashed/" target="_blank" rel="noopener noreferrer">Metasploit free ethical hacking course</a></li>
+        <li><a href="https://portswigger.net/burp/documentation/desktop/getting-started" target="_blank" rel="noopener noreferrer">Burp Suite documentation</a></li>
+        <li><a href="https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html" target="_blank" rel="noopener noreferrer">Wireshark documentation</a></li>
+        <li><a href="https://www.aircrack-ng.org/doku.php?id=newbie_guide" target="_blank" rel="noopener noreferrer">Aircrack-ng newbie guide for Linux</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/sqlmap" target="_blank" rel="noopener noreferrer">Sqlmap</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/hydra" target="_blank" rel="noopener noreferrer">Hydra</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/hashcat" target="_blank" rel="noopener noreferrer">Hashcat</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/bettercap" target="_blank" rel="noopener noreferrer">Bettercap</a></li>
+        <li><a href="https://trustedsec.com/resources/tools/the-social-engineer-toolkit-set" target="_blank" rel="noopener noreferrer">The Social Engineering Toolkit</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/netcat" target="_blank" rel="noopener noreferrer">Netcat</a></li>
+        <li><a href="https://hackviser.com/tactics/tools/john-the-ripper" target="_blank" rel="noopener noreferrer">John the Ripper</a></li>
+      </ul>
+    </section>
+
+    <section id="panel-cert" class="panel" role="tabpanel" aria-labelledby="tab-cert" hidden>
+      <p class="panel-desc">Curated list of free certification resources to level up your credentials.</p>
+      <a class="cta-card" href="https://github.com/cloudcommunity/Free-Certifications" target="_blank" rel="noopener noreferrer">
+        <span class="cta-label">Free Certifications</span>
+        <span class="cta-url">github.com/cloudcommunity/Free-Certifications</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    </section>
+
+    <section id="panel-thm" class="panel" role="tabpanel" aria-labelledby="tab-thm" hidden>
+      <p class="panel-desc">Hands-on rooms to practice pentesting. Free and paid options listed.</p>
+      <ul class="thm-list">
+        <li>
+          <a href="https://tryhackme.com/room/vulnversity" target="_blank" rel="noopener noreferrer">Vulnversity</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/steelmountain" target="_blank" rel="noopener noreferrer">Steel Mountain</a>
+          <span class="badge paid">Not free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/basicpentestingjt" target="_blank" rel="noopener noreferrer">Basic Pentesting</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/redteamrecon" target="_blank" rel="noopener noreferrer">Red Team Recon</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/shodan" target="_blank" rel="noopener noreferrer">Shodan.io</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/pythonbasics" target="_blank" rel="noopener noreferrer">Python Basics</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/pythonplayground" target="_blank" rel="noopener noreferrer">Python Playground</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/intropocscripting" target="_blank" rel="noopener noreferrer">Intro PoC Scripting</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/peakhill" target="_blank" rel="noopener noreferrer">Peak Hill</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/rust" target="_blank" rel="noopener noreferrer">Learn Rust</a>
+          <span class="badge free">Free</span>
+        </li>
+        <li>
+          <a href="https://tryhackme.com/room/yara" target="_blank" rel="noopener noreferrer">Yara</a>
+          <span class="badge paid">Not free</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
